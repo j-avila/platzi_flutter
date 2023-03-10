@@ -62,6 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  String descriptionDummy =
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.🔥 jojojo";
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -81,7 +84,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
 
         child: Column(
-          children: const <Widget>[DescriptionPalce()],
+          children: <Widget>[DescriptionPalce("Bahamas", 3, descriptionDummy)],
         ),
       ),
     );

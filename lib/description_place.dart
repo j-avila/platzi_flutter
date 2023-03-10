@@ -1,7 +1,12 @@
 import "package:flutter/material.dart";
 
 class DescriptionPalce extends StatelessWidget {
-  const DescriptionPalce({super.key});
+  String placeName;
+  int rating;
+  String placeDescription;
+
+  DescriptionPalce(this.placeName, this.rating, this.placeDescription,
+      {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +23,28 @@ class DescriptionPalce extends StatelessWidget {
       ),
     );
 
+    final star_border = Container(
+      margin: const EdgeInsets.only(
+        top: 323.0,
+        right: 3.0,
+      ),
+      child: const Icon(
+        Icons.star_border,
+        color: Color.fromARGB(255, 215, 218, 44),
+      ),
+    );
+
+    final star_half = Container(
+      margin: const EdgeInsets.only(
+        top: 323.0,
+        right: 3.0,
+      ),
+      child: const Icon(
+        Icons.star_half_outlined,
+        color: Color.fromARGB(255, 215, 218, 44),
+      ),
+    );
+
     final titleStars = Row(children: <Widget>[
       Container(
         margin: const EdgeInsets.only(
@@ -25,21 +52,24 @@ class DescriptionPalce extends StatelessWidget {
           left: 20,
           right: 20,
         ),
-        child: const Text(
-          "Duwili Ella",
-          style: TextStyle(fontSize: 30.0, fontWeight: FontWeight.bold),
+        child: Text(
+          placeName,
+          style: const TextStyle(
+            fontFamily: "LatoBold",
+            fontSize: 30.0,
+            fontWeight: FontWeight.bold,
+          ),
           textAlign: TextAlign.left,
         ),
       ),
       Row(
-        children: <Widget>[
-          star,
-          star,
-          star,
-          star,
-          star,
-        ],
-      ),
+          children: List.generate(5, (index) {
+        if (index < rating) {
+          return star;
+        } else {
+          return star_border;
+        }
+      })),
     ]);
 
     final description = Container(
@@ -48,12 +78,13 @@ class DescriptionPalce extends StatelessWidget {
           right: 20.0,
           left: 20.0,
         ),
-        child: const Text(
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-          style: TextStyle(
+        child: Text(
+          placeDescription,
+          style: const TextStyle(
+              fontFamily: "Lato",
               fontSize: 16.0,
               fontWeight: FontWeight.w300,
-              color: Color(0xFF56575A)),
+              color: Color.fromARGB(255, 90, 87, 86)),
         ));
 
     return Column(children: <Widget>[titleStars, description]);
