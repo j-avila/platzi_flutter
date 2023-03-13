@@ -23,7 +23,7 @@ class DescriptionPalce extends StatelessWidget {
       ),
     );
 
-    final star_border = Container(
+    final starBorder = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
         right: 3.0,
@@ -34,7 +34,7 @@ class DescriptionPalce extends StatelessWidget {
       ),
     );
 
-    final star_half = Container(
+    final starHalf = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
         right: 3.0,
@@ -67,7 +67,7 @@ class DescriptionPalce extends StatelessWidget {
         if (index < rating) {
           return star;
         } else {
-          return star_border;
+          return starBorder;
         }
       })),
     ]);

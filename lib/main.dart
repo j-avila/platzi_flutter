@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/description_place.dart';
+import 'package:flutter_application_1/review.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Hola mundo'),
+      home: const MyHomePage(title: "Let's travel modafucka"),
     );
   }
 }
@@ -49,21 +50,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
-
   String descriptionDummy =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.🔥 jojojo";
+  String pathImage = "assets/images/guy.jpg";
+  String name = "Varuna yasas";
+  String details = " 1 review 5 photos";
+  String comment = " a beutifull place to visit in sri lanka";
+  double rating = 3.0;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +77,10 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
 
         child: Column(
-          children: <Widget>[DescriptionPalce("Bahamas", 3, descriptionDummy)],
+          children: <Widget>[
+            DescriptionPalce("Bahamas", 3, descriptionDummy),
+            Review(pathImage, name, details, comment)
+          ],
         ),
       ),
     );
