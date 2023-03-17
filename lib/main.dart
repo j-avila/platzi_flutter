@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/backgroud_back.dart';
 import 'package:flutter_application_1/description_place.dart';
 import 'package:flutter_application_1/review.dart';
+import 'package:flutter_application_1/review_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,11 +54,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String descriptionDummy =
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.🔥 jojojo";
-  String pathImage = "assets/images/guy.jpg";
-  String name = "Varuna yasas";
-  String details = " 1 review 5 photos";
-  String comment = " a beutifull place to visit in sri lanka";
-  double rating = 3.0;
 
   @override
   Widget build(BuildContext context) {
@@ -67,21 +64,21 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-
-        child: Column(
-          children: <Widget>[
-            DescriptionPalce("Bahamas", 3, descriptionDummy),
-            Review(pathImage, name, details, comment)
-          ],
-        ),
+      // appBar: AppBar(
+      //   // Here we take the value from the MyHomePage object that was created by
+      //   // the App.build method, and use it to set our appbar title.
+      //   title: Text(widget.title),
+      // ),
+      body: Stack(
+        children: <Widget>[
+          ListView(
+            children: [
+              DescriptionPalce("Bahamas", 3, descriptionDummy),
+              ReviewList()
+            ],
+          ),
+          Background('Popular')
+        ],
       ),
     );
   }

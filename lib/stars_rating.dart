@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class Rating extends StatelessWidget {
-  double score = 0;
+  double rating = 0;
 
-  Rating(this.score, {super.key});
+  Rating(this.rating, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class Rating extends StatelessWidget {
 
     final starBorder = Container(
       margin: const EdgeInsets.only(
-        top: 323.0,
+        top: 3.0,
         right: 3.0,
       ),
       child: const Icon(
@@ -42,7 +42,7 @@ class Rating extends StatelessWidget {
 
     final startRating = Row(
         children: List.generate(5, (index) {
-      if (index < score) {
+      if (index < rating) {
         return star;
       } else {
         return starBorder;

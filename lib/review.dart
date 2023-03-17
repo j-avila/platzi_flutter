@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/stars_rating.dart';
 
@@ -8,15 +6,14 @@ class Review extends StatelessWidget {
   String name = "Varuna yasas";
   String details = "1 review 5 photos";
   String comment = "a beutifull place to visit in sri lanka";
-  double rating = 0.2;
+  double rating;
 
   Review(this.pathImage, this.name, this.details, this.comment, this.rating,
       {super.key});
 
-  Rating starsRating = Rating(rating);
-
   @override
   Widget build(BuildContext context) {
+    Rating starsRating = Rating(rating);
     final photo = Container(
         margin: const EdgeInsets.only(top: 20.0, left: 20.0),
         width: 80,
