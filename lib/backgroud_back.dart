@@ -13,7 +13,10 @@ class Background extends StatelessWidget {
         height: 260.0,
         decoration: const BoxDecoration(
             gradient: LinearGradient(
-                colors: [Color(0xFF4268D3), Color(0xFF584cd1)],
+                colors: [
+                  Color.fromARGB(255, 29, 69, 178),
+                  Color.fromARGB(255, 126, 119, 204)
+                ],
                 begin: FractionalOffset(0.2, 0.0),
                 end: FractionalOffset(1.0, 0.6),
                 stops: [0.0, 0.6])),

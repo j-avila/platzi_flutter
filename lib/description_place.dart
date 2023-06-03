@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "button.dart";
 
 class DescriptionPalce extends StatelessWidget {
   String placeName;
@@ -73,20 +74,27 @@ class DescriptionPalce extends StatelessWidget {
     ]);
 
     final description = Container(
-        margin: const EdgeInsets.only(
-          top: 20.0,
-          right: 20.0,
-          left: 20.0,
-        ),
-        child: Text(
-          placeDescription,
-          style: const TextStyle(
-              fontFamily: "Lato",
-              fontSize: 16.0,
-              fontWeight: FontWeight.w300,
-              color: Color.fromARGB(255, 90, 87, 86)),
-        ));
+      margin: const EdgeInsets.only(
+        top: 20.0,
+        right: 20.0,
+        left: 20.0,
+      ),
+      child: Text(
+        placeDescription,
+        style: const TextStyle(
+            fontFamily: "Lato",
+            fontSize: 16.0,
+            fontWeight: FontWeight.w300,
+            color: Color.fromARGB(255, 90, 87, 86)),
+      ),
+    );
 
-    return Column(children: <Widget>[titleStars, description]);
+    return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          titleStars,
+          description,
+          MainButton("Navigate"),
+        ]);
   }
 }

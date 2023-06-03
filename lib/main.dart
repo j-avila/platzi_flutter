@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/backgroud_back.dart';
+import 'package:flutter/services.dart';
+//widgets
 import 'package:flutter_application_1/description_place.dart';
-import 'package:flutter_application_1/review.dart';
+import 'package:flutter_application_1/header_app.dart';
 import 'package:flutter_application_1/review_list.dart';
 
 void main() {
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+      statusBarBrightness: Brightness.light));
   runApp(const MyApp());
 }
 
@@ -15,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'App travel',
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -73,11 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
         children: <Widget>[
           ListView(
             children: [
-              DescriptionPalce("Bahamas", 3, descriptionDummy),
+              DescriptionPalce("Chuspa", 3, descriptionDummy),
               ReviewList()
             ],
           ),
-          Background('Popular')
+          const HeaderApp()
         ],
       ),
     );
