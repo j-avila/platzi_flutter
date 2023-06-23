@@ -11,8 +11,6 @@ class DescriptionPalce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: IMPLEMENT BUILD
-
     final star = Container(
       margin: const EdgeInsets.only(
         top: 323.0,
