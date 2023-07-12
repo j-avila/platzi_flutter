@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 //widgets
-import 'package:flutter_application_1/description_place.dart';
-import 'package:flutter_application_1/header_app.dart';
-import 'package:flutter_application_1/review_list.dart';
+import 'package:flutter_application_1/trip_detail.dart';
 
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -56,9 +54,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  String descriptionDummy =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.🔥 jojojo";
-
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -67,23 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return Scaffold(
-      // appBar: AppBar(
-      //   // Here we take the value from the MyHomePage object that was created by
-      //   // the App.build method, and use it to set our appbar title.
-      //   title: Text(widget.title),
-      // ),
-      body: Stack(
-        children: <Widget>[
-          ListView(
-            children: [
-              DescriptionPalce("Chuspa", 3, descriptionDummy),
-              ReviewList()
-            ],
-          ),
-          const HeaderApp()
-        ],
-      ),
-    );
+    return TripDetail();
   }
 }
