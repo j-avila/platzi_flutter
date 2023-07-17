@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/review.dart';
+import 'package:flutter_application_1/detail/review.dart';
 
 class ReviewList extends StatelessWidget {
   ReviewList({super.key});

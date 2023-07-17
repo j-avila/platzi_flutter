@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/stars_rating.dart';
+import 'package:flutter_application_1/common/stars_rating.dart';
 
 class Review extends StatelessWidget {
   String pathImage = "assets/images/guy.jpg";
